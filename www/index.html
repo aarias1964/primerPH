@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="themes/misTemas.css" /> 
-        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" /> 
-        <script src="js/jquery-1.11.1.min.js"></script> 
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
         <script>
         var jugador1="";
         var jugador2="";
@@ -18,11 +18,11 @@
         //funcion que inicializa toda la pagina
         $(document).bind("pageinit",function()
         {
-            $('#win1, #ef1, #enf2').on("click",function(event){
+            $('#win1, #ef1, #enf2').bind("click",function(event){
                 if(saca==0){
-                    sumaPunto=true;
+                    sumaPunto(true);
                 } else {
-                    sumaPunto=false;
+                    sumaPunto(false);
                 }
                 $(this).removeAttr("checked").checkboxradio("refresh");
                 actualizaMarcador();
@@ -30,11 +30,11 @@
 
             });
 
-            $('#win2, #ef2, #enf1').on("click",function(event){
+            $('#win2, #ef2, #enf1').bind("click",function(event){
                 if(saca==0){
-                    sumaPunto=false;
+                    sumaPunto(false);
                 } else {
-                    sumaPunto=true;
+                    sumaPunto(true);
                 }
                 $(this).removeAttr("checked").checkboxradio("refresh");
                 actualizaMarcador();
